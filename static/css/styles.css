@@ -1,0 +1,28 @@
+.topheader
+{
+    background-image: url("../imgs/doctor.jpg");
+    height: 130px;
+    background-size:100% 100px;
+    background-repeat: no-repeat;
+}
+
+.btn
+{
+    width: 50%;
+}
+
+.form-group.required .control-label:after {
+    content:"*";
+    color:red;
+}
+
+.navbar-brand
+{
+    font-size: 48px;
+    color: white;
+}
+
+body
+{
+    font-size: 20px;
+}

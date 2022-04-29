@@ -1,0 +1,122 @@
+{% extends 'layout.html' %}
+
+{% block body %} 
+
+<div class="container">
+
+  <div class="row" style="background-color:cornsilk;padding-top: 20px;">
+
+    <div class="col-md-6" > 
+      <form action="{{ url_for('predictDisease')}}" method="post">
+          <div class="form-group row required">
+            <label for="symptom1" class="col-md-6 col-form-label control-label">Symptom-1</label>
+            <div class="col-md-6">
+              <input type="text" class="form-control" id="symptom1" name="symptom1" value="{{symptom1}}">
+            </div>
+          </div>
+          <br/>
+          <div class="form-group row required">
+            <label for="symptom2" class="col-md-6 col-form-label control-label">Symptom-2</label>
+            <div class="col-md-6">
+              <input type="text" class="form-control" id="symptom2" name="symptom2" value="{{symptom2}}">
+            </div>
+          </div>
+          <br/>
+          <div class="form-group row required">
+            <label for="symptom3" class="col-md-6 col-form-label control-label">Symptom-3</label>
+            <div class="col-md-6">
+              <input type="text" class="form-control" id="symptom3" name="symptom3" value="{{symptom3}}">
+            </div>
+          </div>
+          <br/>
+          <div class="form-group row">
+            <label for="symptom4" class="col-md-6 col-form-label control-label">Symptom-4</label>
+            <div class="col-md-6">
+              <input type="text" class="form-control" id="symptom4" name="symptom4" value="{{symptom4}}">
+            </div>
+          </div>
+          <br/>
+          <div class="form-group row">
+            <label for="symptom5" class="col-md-6 col-form-label control-label">Symptom-5</label>
+            <div class="col-md-6">
+              <input type="text" class="form-control" id="symptom5" name="symptom5" value="{{symptom5}}">
+            </div>
+          </div>
+          <br/>
+          <div class="form-group row d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Predict</button>
+          </div>
+      </form>
+    </div>
+
+    <div class="col-md-6">
+      
+      <div class="form-group row">
+        <label for="rf" class="col-md-6 col-form-label">Random Forest</label>
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="rf" value="{{ rf_model_prediction }}">
+        </div>
+      </div>
+      <br/>
+      <div class="form-group row">
+        <label for="svm" class="col-md-6 col-form-label">Support Vector Machines</label>
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="svm" value="{{ svm_model_prediction }}">
+        </div>
+      </div>
+      <br/>
+      <div class="form-group row">
+        <label for="nb" class="col-md-6 col-form-label">Naive Bayes</label>
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="nb" value="{{ nb_model_prediction }}">
+        </div>
+      </div>
+      <br/>
+
+      <div class="form-group row d-flex justify-content-center">
+        <!-- <form action="{{ url_for('predictDisease') }}" method="post">
+        <button type="submit" class="btn btn-primary" >Predict</button>
+        </form> -->
+      </div>
+    </div>
+    
+
+  </div>
+
+  <div class="row" style="background-color: #8083c9">
+    <div class="row" style="padding-top: 20px;">
+      <div class="form-group row">
+        <label for="desc" class="col-md-4 col-form-label">Disease Description</label>
+        <div class="col-md-6">
+          <textarea class="form-control" id="desc" rows="4" >{{description}}</textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="padding-top: 20px;padding-bottom: 20px;">
+      <div class="form-group row">
+        <label for="prec" class="col-md-4 col-form-label">Precautions</label>
+        <div class="col-md-6">
+          <textarea class="form-control" id="prec" rows="4">{{precaution}}</textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <br/>
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+  
+{% endblock %}
